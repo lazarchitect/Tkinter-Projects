@@ -1,10 +1,9 @@
-#calculator.py
-
-#[pi, e, ANSWER BUTTON], [ln(x), sqrt(x), factorial()] 
+#[ln(x), sqrt(x), factorial()] 
 
 
 from tkinter import *
 import math
+
 
 def tetrate(x,y):#repeated exponentiation. 2^^3 = 2^2^2. It's on wikipedia if you want to learn more(it goes deeper).
 	if(y>0):
@@ -20,7 +19,7 @@ def fx(func):
 	try:
 		answer.set(round(func(float(textfield.get()), float(textfield2.get())),6 ) )
 	except OverflowError:
-		answer.set("Too big for your shitty processor")	
+		answer.set("Too big...")	
 	except:
 		answer.set("Bad Input")
 
@@ -28,7 +27,7 @@ def f(func):
 	try:
 		answer.set(round(func(float(textfield.get())),6))
 	except OverflowError:
-		answer.set("Too big for your shitty processor")
+		answer.set("Too big...")
 	except:	
 		answer.set("Bad Input")
 			
@@ -91,7 +90,7 @@ def e_set():
 	s1.set(2.71828182846)
 	textfield2.focus_set()
 	
-def redefine():
+def redefine():	
 	s1.set(answer.get())
 	answer.set("")
 
@@ -117,7 +116,7 @@ Button(window, text = "x+y", font = ("Helvetica",16), width = 5, height=2, comma
 Button(window, text = "x-y", font = ("Helvetica",16), width = 5, height=2, command = sub).grid(row=3,column=0)
 
 Button(window, text = "x*y", font = ("Helvetica",16), width = 5, height=2, command = mul).grid(row=2,column=1)
-Button(window, text = "x"+u"\u00F7"+"y", font = ("Helvetica",16), width = 5, height=2, command = div).grid(row=3,column=1)
+Button(window, text = "x"+"/"+"y", font = ("Helvetica",16), width = 5, height=2, command = div).grid(row=3,column=1)
 
 Button(window, text = "x^y", font = ("Helvetica",16), width = 5, height=2, command = exp).grid(row=2,column=2)
 Button(window, text = "x^^y", font = ("Helvetica",16), width = 5, height=2, command = tet).grid(row=3,column=2)
