@@ -17,7 +17,7 @@ try:
 	imageData = imageRow.find("td",{"width":"312"})
 	image = imageData.find("img")
 	imageURL = image.get("src")
-	imageEncoding = get(imageURL).content #the final product
+	imageEncoding = get("https://magiccards.info"+ imageURL).content #the final product
 except AttributeError:
 	print("No card found by that name.")
 	exit()
